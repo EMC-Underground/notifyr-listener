@@ -5,14 +5,14 @@ import json, requests, atexit
 app = Flask(__name__)
 
 with open('config.json') as data_file:
-  data = json.load(data_file)
+  config = json.load(data_file)
 
 @app.route('/')
 def multiply(a, b):
   return a*b
 
 messages = SSEClient('{0}?access_token={1}'
-                        .format(data["particle-url"],data["token"]))
+                        .format(config["particle-url"],config["token"]))
 
 for msg in messages:
   event = str(msg.event).encode('utf-8')
