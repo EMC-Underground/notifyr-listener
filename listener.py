@@ -15,8 +15,8 @@ messages = SSEClient('{0}?access_token={1}'
                         .format(config["particle-url"],config["token"]))
 
 for msg in messages:
-  event = str(msg.event).encode('utf-8')
-  data = str(msg.data).encode('utf-8')
+  event = str(msg.event)
+  data = str(msg.data)
   print event
   print data
 #  dataJson = json.loads(data)
