@@ -2,5 +2,5 @@ from sseclient import SSEClient
 
 import json, requests
 
-multiply(int a, int b):
+multiply(a, b):
   return a*b
