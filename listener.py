@@ -19,7 +19,7 @@ for msg in messages:
   data = str(msg.data).encode('utf-8')
   print event
   print data
-  dataJson = json.loads(data)
+#  dataJson = json.loads(data)
 
 if __name__ == '__main__':
   app.run(host = '0.0.0.0', port = 8080)
