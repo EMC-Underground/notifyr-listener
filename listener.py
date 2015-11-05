@@ -1,10 +1,6 @@
-import json
-import requests
+from sseclient import SSEClient
 
-r = requests.get('http://httpbin.org/stream/20', stream=True)
+import json, requests
 
-for line in r.iter_lines():
-
-    # filter out keep-alive new lines
-        if line:
-	        print(json.loads(line))
+multiply(int a, int b):
+  return a*b
