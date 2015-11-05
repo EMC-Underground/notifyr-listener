@@ -11,12 +11,12 @@ with open('config.json') as data_file:
 def multiply(a, b):
   return a*b
 
-messages = SSEClient('{0}?access_token={1}'
+messages = SSEClient('{0}/notifyr?access_token={1}'
                         .format(config["particle-url"],config["token"]))
 
 for msg in messages:
-  event = str(msg.event)
-  data = str(msg.data)
+  event = str(msg.event).encode('ascii', 'ignore').decode('ascii')
+  data = str(msg.data).encode('ascii', 'ignore').decode('ascii')
   print event
   print data
 #  dataJson = json.loads(data)
