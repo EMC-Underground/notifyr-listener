@@ -1,6 +1,23 @@
 from sseclient import SSEClient
+from flask import Flask, url_for, request, jsonify
+import json, requests, atexit
 
-import json, requests
+with open('config.json') as data_file:
+  data = json.load(data_file)
 
+@app.route('/')
 def multiply(a, b):
   return a*b
+
+messages = SSEClient('{0}?access_token={1}'
+                        .format(data["particle-url"],data["token"]))
+
+for msg in messages:
+  event = str(msg.event).encode('utf-8')
+  data = str(msg.data).encode('utf-8')
+  print event
+  print data
+  dataJson = json.loads(data)
+
+if __name__ == '__main__':
+  app.run(host = '0.0.0.0', port = 8080)
