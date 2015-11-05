@@ -2,6 +2,8 @@ from sseclient import SSEClient
 from flask import Flask, url_for, request, jsonify
 import json, requests, atexit
 
+app = Flask(__name__)
+
 with open('config.json') as data_file:
   data = json.load(data_file)
 
