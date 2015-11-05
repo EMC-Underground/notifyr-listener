@@ -6,4 +6,6 @@ install: pip install -r requirements.txt
 script: nosetests
 before_install:
 - openssl aes-256-cbc -K $encrypted_173672a6c39d_key -iv $encrypted_173672a6c39d_iv
+  -in config.json.enc -out config.json -d
+- openssl aes-256-cbc -K $encrypted_173672a6c39d_key -iv $encrypted_173672a6c39d_iv
   -in config.json.enc -out .\\config.json -d
