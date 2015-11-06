@@ -11,5 +11,5 @@ def test_call():
   r = requests.post(url, headers=headers, params=payload)
   # data = "name=TestingTheNotifyrCode&data=This is a test"
   response = r.json()
-  if response["ok"] == "true":
-    return 0
+#  if response["ok"] == "true":
+#    return 0

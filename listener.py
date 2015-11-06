@@ -20,4 +20,4 @@ for msg in messages:
     # print(dataJson["data"])
 
   if msg.event == "TestingTheNotifyrCode":
-    print("CONFIRMED")
+    return 0
