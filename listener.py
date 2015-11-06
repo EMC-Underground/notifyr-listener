@@ -13,12 +13,11 @@ for msg in messages:
   #data = str(msg.data).encode('ascii', 'ignore').decode('ascii')
   #print(event)
   #print(data)
-  print(msg.event)
+  # print(msg.event)
   if msg.event == "notifyr/announce":
-    print(msg.data)
+    # print(msg.data)
     dataJson = json.loads(msg.data)
-    print(dataJson["data"])
+    # print(dataJson["data"])
 
   if msg.event == "TestingTheNotifyrCode":
     print("CONFIRMED")
-    
