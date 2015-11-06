@@ -17,6 +17,11 @@ for msg in messages:
   if msg.event == "notifyr/announce":
     # print(msg.data)
     dataJson = json.loads(msg.data)
+    url = config["google-sheet-url"]
+    payload = {'Core_ID':'{0}'.format(dataJson["coreid"]),
+                'Core_Data':'{0}'.format(dataJson["data"])}
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    r = requests.post(url, headers=headers, params=payload)
     # print(dataJson["data"])
 
   if msg.event == "TestingTheNotifyrCode":
