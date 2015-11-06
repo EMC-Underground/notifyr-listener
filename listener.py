@@ -21,7 +21,8 @@ for msg in messages:
     payload = {'Core_ID':'{0}'.format(dataJson["coreid"]),
                 'Core_Data':'{0}'.format(dataJson["data"])}
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-    r = requests.post(url, headers=headers, params=payload)
+    r = requests.post(url, headers=headers, params=payload, verify=False)
     # print(dataJson["data"])
 
   if msg.event == "TestingTheNotifyrCode":
+    print("OK!")
