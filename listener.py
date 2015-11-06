@@ -20,4 +20,3 @@ for msg in messages:
     # print(dataJson["data"])
 
   if msg.event == "TestingTheNotifyrCode":
-    return 0
