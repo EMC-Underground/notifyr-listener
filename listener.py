@@ -2,7 +2,7 @@ from sseclient import SSEClient
 import json, requests, atexit, os
 
 # Start collecting stream from the particle cloud
-messages = SSEClient('{0}/notifyr?access_token={1}'
+messages = SSEClient('{0}?access_token={1}'
                        .format(os.environ['PARTICLE-URL'],os.environ['TOKEN']))
 
 for msg in messages:
